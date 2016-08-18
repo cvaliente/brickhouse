@@ -51,7 +51,7 @@ public class CastArrayUDF extends GenericUDF {
     public List<Object> evaluate(List<Object> uninspArray) {
         List<Object> newList = new ArrayList<Object>();
         for (Object uninsp : uninspArray) {
-            LOG.debug("Uninspected = {}", uninsp);
+            // LOG.debug("Uninspected = " + uninsp);
             Object stdObject = ObjectInspectorUtils.copyToStandardJavaObject(uninsp, fromInspector);
             Object castedObject = coerceObject(stdObject);
             newList.add(castedObject);
@@ -60,7 +60,7 @@ public class CastArrayUDF extends GenericUDF {
     }
 
     private Object coerceObject(Object stdObj) {
-        LOG.debug("Casting {} from {} to {} of type {} ", stdObj, fromInspector.getPrimitiveCategory(), toInspector.getPrimitiveCategory(), toInspector.getTypeName());
+        // LOG.debug("Casting " + stdObj + " from " + fromInspector.getPrimitiveCategory() + " to " + toInspector.getPrimitiveCategory() + " of type " + toInspector.getTypeName());
         if (stdObj == null) {
             return null;
         }
@@ -146,7 +146,7 @@ public class CastArrayUDF extends GenericUDF {
 
     private static PrimitiveObjectInspector GetObjectInspectorForTypeName(String typeString) {
         TypeInfo typeInfo = TypeInfoUtils.getTypeInfoFromTypeString(typeString);
-        LOG.debug("Type for {} is {}", typeString, typeInfo);
+        // LOG.debug("Type for " + typeString + " is " + typeInfo);
 
         return (PrimitiveObjectInspector) TypeInfoUtils.getStandardJavaObjectInspectorFromTypeInfo(typeInfo);
     }
