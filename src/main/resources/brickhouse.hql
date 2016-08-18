@@ -20,8 +20,8 @@ CREATE TEMPORARY FUNCTION join_array AS 'brickhouse.udf.collect.JoinArrayUDF';
 CREATE TEMPORARY FUNCTION map_filter_keys AS 'brickhouse.udf.collect.MapFilterKeysUDF';
 CREATE TEMPORARY FUNCTION map_index AS 'brickhouse.udf.collect.MapIndexUDF';
 CREATE TEMPORARY FUNCTION map_key_values AS 'brickhouse.udf.collect.MapKeyValuesUDF';
-CREATE TEMPORARY FUNCTION mhash3 AS 'brickhouse.udf.collect.MurmurHash3UDF.java';
-CREATE TEMPORARY FUNCTION mhash3array AS 'brickhouse.udf.collect.MurmurHash3ArrayUDF.java';
+CREATE TEMPORARY FUNCTION mhash3 AS 'brickhouse.udf.collect.MurmurHash3UDF';
+CREATE TEMPORARY FUNCTION mhash3array AS 'brickhouse.udf.collect.MurmurHash3ArrayUDF';
 CREATE TEMPORARY FUNCTION multiday_count AS 'brickhouse.udf.collect.MultiDayCounterUDAF';
 CREATE TEMPORARY FUNCTION numeric_range AS 'brickhouse.udf.collect.NumericRange';
 CREATE TEMPORARY FUNCTION set_difference AS 'brickhouse.udf.collect.SetDifferenceUDF';
@@ -33,7 +33,7 @@ CREATE TEMPORARY FUNCTION group_count AS 'brickhouse.udf.collect.GroupCountUDF';
 CREATE TEMPORARY FUNCTION group_first AS 'brickhouse.udf.collect.FirstOfGroupUDAF';
 
 CREATE TEMPORARY FUNCTION json_map AS 'brickhouse.udf.json.JsonMapUDF';
-CREATE TEMPORARY FUNCTION json_split AS 'brickhouse.udf.json.JsonSplitUDF'; 
+CREATE TEMPORARY FUNCTION json_split AS 'brickhouse.udf.json.JsonSplitUDF';
 CREATE TEMPORARY FUNCTION to_json AS 'brickhouse.udf.json.ToJsonUDF';
 CREATE TEMPORARY FUNCTION from_json AS 'brickhouse.udf.json.FromJsonUDF';
 CREATE TEMPORARY FUNCTION to_camel_case AS 'brickhouse.udf.json.ConvertToCamelCaseUDF';
@@ -78,6 +78,7 @@ CREATE TEMPORARY FUNCTION bloom_not AS 'brickhouse.udf.bloom.BloomNotUDF';
 
 CREATE TEMPORARY FUNCTION add_days AS 'brickhouse.udf.date.AddDaysUDF';
 CREATE TEMPORARY FUNCTION date_range AS 'brickhouse.udf.date.DateRangeUDTF';
+CREATE TEMPORARY FUNCTION add_iso_period AS 'brickhouse.udf.date.AddISOPeriodUDF';
 
 CREATE TEMPORARY FUNCTION hbase_balanced_key AS 'brickhouse.hbase.GenerateBalancedKeyUDF';
 CREATE TEMPORARY FUNCTION hbase_batch_put AS 'brickhouse.hbase.BatchPutUDAF';
